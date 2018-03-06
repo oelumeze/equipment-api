@@ -13,6 +13,7 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
+//add CORS to allow any client to make request to the API
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response
